@@ -9,14 +9,31 @@ package com.mycompany.controlelojas.model;
  * @author blackout
  */
 public class Estoque {
+
     private int id;
     private String produto;
     private int idlojas;
-   
-    public Estoque(int id, String produto, int idlojas) {
+    private double quantidade;
+
+    public Estoque(int id, String produto, double quantidade) {
         this.id = id;
         this.produto = produto;
-        this.idlojas = idlojas;
+        this.quantidade = quantidade;
+
+    }
+
+    public Estoque(String produto, double quantidade) {
+        this.produto = produto;
+        this.quantidade = quantidade;
+
+    }
+
+    public double getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(double quantidade) {
+        this.quantidade = quantidade;
     }
 
     public Estoque(String produto) {
@@ -46,12 +63,5 @@ public class Estoque {
     public void setIdlojas(int idlojas) {
         this.idlojas = idlojas;
     }
-    
-    
 
-
-    
-    
-    
 }
-

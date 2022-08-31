@@ -5,6 +5,7 @@
 package com.mycompany.controlelojas.control;
 
 import com.mycompany.controlelojas.dao.LoginDao;
+import com.mycompany.controlelojas.model.Login;
 import java.sql.SQLException;
 
 /**
@@ -21,5 +22,10 @@ public class LoginController {
         LoginDao validar = new LoginDao();
         validar.validarLogin(nome, cpf, senha);
     }
-
+    
+    public void cadastrarUsuarioController(String nome,String cpf, String senha) throws SQLException{
+        LoginDao cadastrar = new LoginDao();
+        Login novoLogin1 = new Login(nome, cpf, senha);
+        cadastrar.save(novoLogin1);
+    }
 }
